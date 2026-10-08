@@ -5,3 +5,6 @@ obj/
 *.user
 
 dist/*/
+docgen/bin/
+docgen/obj/
+artifacts/

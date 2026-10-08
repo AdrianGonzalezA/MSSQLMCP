@@ -19,4 +19,6 @@ Set-ExecutionPolicy -Scope Process Bypass
 
 El paquete es autocontenido para Windows x64: no requiere instalar .NET ni Docker.
 
+También está disponible la [guía de instalación en Word](docs/Guia_instalacion_RI_MSSQL_MCP.docx) para compartir con el personal de soporte.
+
 La documentación técnica completa está en [RI_MSSQL_MCP_README.md](RI_MSSQL_MCP_README.md).
