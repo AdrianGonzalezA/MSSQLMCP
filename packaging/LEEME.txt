@@ -1,0 +1,53 @@
+RI MSSQL MCP - INSTALACIÓN PARA SOPORTE
+=======================================
+
+Requisitos
+----------
+- Windows de 64 bits.
+- Codex instalado y con la sesión iniciada.
+- Una cadena de conexión de SQL Server con permisos de solo lectura.
+- Acceso de red al servidor SQL.
+
+Instalación
+-----------
+1. Extraiga todo el ZIP en una ubicación permanente, por ejemplo:
+   C:\Herramientas\RiMssqlMcp
+
+2. Abra PowerShell dentro de esa carpeta.
+
+3. Ejecute:
+   Set-ExecutionPolicy -Scope Process Bypass
+   .\Instalar-MssqlMcp.ps1
+
+4. Indique el nombre del perfil y pegue la cadena de conexión cuando se solicite.
+   La cadena no se muestra en pantalla.
+
+5. Cierre Codex y vuelva a abrirlo.
+
+6. Pruebe escribiendo:
+   Usa ri-mssql para listar las conexiones disponibles.
+
+Ejemplos
+--------
+- Lista las tablas de la conexión Mutual.
+- Describe la tabla Accounting.AccountingConceptTypes de la conexión Mutual.
+- Ejecuta SELECT TOP (10) * FROM esquema.tabla usando la conexión Mutual.
+
+Actualización
+-------------
+Extraiga la nueva versión sobre una carpeta nueva y vuelva a ejecutar
+Instalar-MssqlMcp.ps1 desde esa carpeta.
+
+Desinstalación
+--------------
+Ejecute:
+   .\Desinstalar-MssqlMcp.ps1
+
+Seguridad
+---------
+- No comparta la cadena de conexión por correo o chat.
+- La cuenta SQL debe tener permisos de solo lectura.
+- No mueva ni borre esta carpeta mientras el MCP esté registrado.
+- Encrypt=False solo debe utilizarse para la instancia de demostración que no
+  admite el cifrado requerido. Para otros servidores use la configuración TLS
+  indicada por infraestructura.

@@ -1,0 +1,11 @@
+services:
+  mssql-mcp:
+    build: .
+    image: ri-mssql-mcp:latest
+    stdin_open: true
+    tty: true
+    environment:
+      Mcp__CommandTimeoutSeconds: ${MCP_TIMEOUT_SECONDS:-30}
+      Mcp__MaxRows: ${MCP_MAX_ROWS:-500}
+      Connections__0__Name: ${MSSQL_PROFILE_NAME:-principal}
+      Connections__0__ConnectionString: ${MSSQL_CONNECTION_STRING:?Configura MSSQL_CONNECTION_STRING en .env}
